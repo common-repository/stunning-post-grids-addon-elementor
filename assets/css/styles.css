@@ -1,0 +1,401 @@
+.spga-wrapper .spga-pagination-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.spga-wrapper .spga-grids {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    max-width: 100%;
+}
+
+.spga-wrapper .spga-grids .grid {
+    flex-grow: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.spga-wrapper .spga-grids .grid:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.005, 1.005);
+}
+
+.spga-wrapper .spga-grids .grid:hover .grid-img-hover {
+    height: 100%;
+    opacity: 0.3;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+}
+
+.spga-wrapper .spga-grids .grid:hover .grid-info {
+    background-color: transparent;
+    position: relative;
+}
+
+.spga-wrapper .spga-grids .grid:hover .grid-info-hover {
+    opacity: 1;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info-hover {
+    position: absolute;
+    padding: 16px;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info-hover .grid-clock-info {
+    float: right;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info-hover .grid-clock-info .grid-clock {
+    width: 15px;
+    vertical-align: middle;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info-hover .grid-clock-info .grid-time {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.spga-wrapper .spga-grids .grid .grid-img {
+    visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.885, 0.175, 0, 1);
+}
+
+.spga-wrapper .spga-grids .grid .grid-img-hover {
+    transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info {
+    z-index: 2;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info .grid-category {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #868686;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info .grid-title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info .grid-excerpt {
+    word-break: break-word;
+    padding: 5px;
+}
+
+.spga-wrapper .spga-grids .grid .grid-info .grid-by {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .spga-wrapper .spga-grids .grid {
+        width: 45% !important;
+        margin: 5px !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .spga-wrapper .spga-grids .grid {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+}
+
+.spga-flipper {
+    cursor: pointer;
+}
+
+.spga-flipper .container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.spga-flipper .container .front,
+.spga-flipper .container .back {
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    background-position: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+    min-height: 280px;
+    height: auto;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.container:hover .front,
+.container:hover .back {
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.inner {
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    outline: 1px solid transparent;
+    perspective: inherit;
+    z-index: 2;
+}
+
+.inner a {
+    padding: 8px 18px;
+    background: cedce7;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+.container .back {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.container .front {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.container:hover .back {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.container:hover .front {
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+}
+
+.front .inner p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.front .inner p:after {
+    content: "";
+    width: 4rem;
+    height: 2px;
+    position: absolute;
+    background: #c6d4df;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -0.75rem;
+}
+
+.front .inner span {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: inherit;
+    font-weight: 300;
+}
+
+@media screen and (min-width: 992px) {
+    .spga-flipper {
+        width: calc(33.333333% - 2rem);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .spga-flipper {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .spga-flipper {
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+}
+
+:root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.smart-card-wrapper {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.spga-smart-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .spga-smart-card {
+        height: 350px;
+    }
+}
+
+.spga-smart-card .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    transition: transform var(--d) var(--e);
+    z-index: 1;
+}
+
+.spga-smart-card .content > * + * {
+    margin-top: 1rem;
+}
+
+.spga-smart-card .content:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.spga-smart-card .title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.spga-smart-card .copy {
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.spga-smart-card a {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.spga-smart-card a:hover {
+    background-color: #0d0d0d;
+}
+
+.spga-smart-card a:focus {
+    outline: 1px dashed yellow;
+    outline-offset: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+    .content {
+        transform: translateY(calc(100% - 4.5rem));
+    }
+
+    .content > *:not(.title) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+    }
+
+    .spga-smart-card:hover,
+    .spga-smart-card:focus-within {
+        align-items: center;
+    }
+
+    .spga-smart-card:hover .content,
+    .spga-smart-card:focus-within .content {
+        transform: translateY(0);
+    }
+
+    .spga-smart-card:hover .content > *:not(.title),
+    .spga-smart-card:focus-within .content > *:not(.title) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--d) / 8);
+    }
+
+    .spga-smart-card:focus-within .content,
+    .spga-smart-card:focus-within .content > *:not(.title) {
+        transition-duration: 0s;
+    }
+}
+
+.spga-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spga-pagination .page-numbers {
+    padding: 0 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.spga-pagination .current {
+    padding: 0 12px;
+    border-radius: 5px;
+}
